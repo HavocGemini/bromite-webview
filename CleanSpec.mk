@@ -45,7 +45,7 @@
 #$(call add-clean-step, rm -rf $(PRODUCT_OUT)/data/*)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/lib/libwebviewchromium.so)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/lib64/libwebviewchromium.so)
-$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/app/webview)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/app/SystemWebView)
 
 # ******************************************************************
 # NEWER CLEAN STEPS MUST BE AT THE END OF THE LIST ABOVE THIS BANNER

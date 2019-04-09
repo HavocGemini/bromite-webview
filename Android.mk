@@ -20,20 +20,20 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := webview
+LOCAL_MODULE := BromiteWebView
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MULTILIB := both
-LOCAL_CERTIFICATE := $(DEFAULT_SYSTEM_DEV_CERTIFICATE)
+LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_REQUIRED_MODULES := \
         libwebviewchromium_loader \
         libwebviewchromium_plat_support
 
-LOCAL_MODULE_TARGET_ARCH := arm arm64 x86
+LOCAL_MODULE_TARGET_ARCH := arm arm64
 my_src_arch := $(call get-prebuilt-src-arch,$(LOCAL_MODULE_TARGET_ARCH))
-LOCAL_SRC_FILES := prebuilt/$(my_src_arch)/webview.apk
+LOCAL_SRC_FILES := $(my_src_arch)_SystemWebView.apk
 
 LOCAL_PREBUILT_JNI_LIBS_arm := @lib/armeabi-v7a/libwebviewchromium.so
 LOCAL_PREBUILT_JNI_LIBS_arm64 := @lib/arm64-v8a/libwebviewchromium.so
-LOCAL_PREBUILT_JNI_LIBS_x86 := @lib/x86/libwebviewchromium.so
+LOCAL_OVERRIDES_PACKAGES := webview
 
 include $(BUILD_PREBUILT)
